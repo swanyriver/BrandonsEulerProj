@@ -28,11 +28,14 @@ bool isPrime(long int num, list<long int> &primes){
 int main(){
    list<long int> primes;
    primes.push_back(2);
+   primes.push_back(3);
 
-   while(primes.size()!=Nth){
+
+   while(primes.size()<Nth){
       int a = primes.back() +1;
       while(!isPrime(a,primes)){
-         a++;
+         //a++;
+         a+=2 //all primes are odd
       }
       primes.push_back(a);
       cout << primes.size() << ":" << primes.back() << endl;
