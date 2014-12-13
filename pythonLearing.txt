@@ -64,7 +64,7 @@ list methods  list.
 
 not dot methods
 del list[i]
-sum list  (list contains one element, sum of all elements)
+sum list  (returns sum of all elements)
 
 
 
