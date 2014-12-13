@@ -16,11 +16,11 @@ def isPrime(x):
         f+=6
     return True
 
-for b in xrange(11,largest_possibe_factor):
-    if not b%10000:
-        print largest_possibe_factor-b, " remaining"
-    if isPrime(b):
-        if not BIGNUM%b:
-            largest = b
+for b in xrange(2,largest_possibe_factor):
+    if not BIGNUM%b:
+        div = BIGNUM/b
+        if isPrime(div):
+            largest = div
+            break
 
 print "largest factor is: ", largest
