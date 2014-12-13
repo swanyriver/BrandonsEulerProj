@@ -41,6 +41,7 @@ rowproduct = rowcheck(grid)
 if rowproduct > largest:
     largest = rowproduct
 
+#collumn
 gridcol = []
 for c in range(gridsize):
     col = []
@@ -51,6 +52,28 @@ for c in range(gridsize):
 rowproduct = rowcheck(gridcol) 
 if rowproduct > largest:
     largest = rowproduct
+
+
+#diag   tl to br
+diagl = []
+for x in range(gridsize-3):
+    r=0
+    row = []
+    for c in range(x,gridsize):
+        row.append(grid[r][c])
+        r+=1
+    diagl.append(row)
+
+for x in range(1,gridsize-3):
+    c=0
+    row = []
+    for r in range(x,gridsize):
+        row.append(grid[r][c])
+        c+=1
+    diagl.append(row)
+
+print diagl[len(diagl)/2:]
+
 
 
 print largest
