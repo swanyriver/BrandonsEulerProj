@@ -1,0 +1,20 @@
+PythonLearning
+
+Dynamicly typed,  variables can change type,  no type needed before variable declaration
+
+def func(param names):
+	indent defines block
+
+flow of execution,  function must be previously defined,  no main(), script read from top to bottom
+
+elif = elseif
+
+0 = False, allelse = True
+False,True, type bool
+
+
+raw_input() keyboard input
+raw_input('prompt\n')   display prompt and newline
+typecast from string
+
+
