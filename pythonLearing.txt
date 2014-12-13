@@ -17,4 +17,61 @@ raw_input() keyboard input
 raw_input('prompt\n')   display prompt and newline
 typecast from string
 
+no semicolons,  one statement per line, \ extends a line,  
 
+: begins a block
+	def:
+	if:
+	while:
+
+strings are immutable
+strings are char seris,  fruit='banana'  print fruit[1] <<< a
+string slices   fruit[1:3] = ana,   fruit[4:] = 'na'
+in operator,  a in fruit <<< True,   band in fruit <<< False
+strings can be compared with == and < >
+.split() creates list of space delimited words
+.split(delimiter)
+
+join creates a string from a list, with delimiter char inserted between, called on delimiter with list as paramaters
+delimiter = ' '
+delimiter.join(ls)
+
+
+empty list declaration - []
+lists are mutable
++ concantenates lists
+* repeats a list a given number of times
+list = [0] * n    creates an initialized to 0 list of n size
+list slices list[a:b]  including a, excluding b  [a,b)
+list[1:3] = [x,y]
+
+List comprehension
+expr FOR var IN list,  returns a list where expr was evaluated on all items
+[x/2 for x in [4,5,6]]  :: [2,2.5,3.0]
+conditions  [x for x in nums if x%2==1]   filtering
+condition with expr  [x*x for x in nums if x>5]
+
+
+range(n)  returns a list of ints from 0 to n-1
+eg range(len(list))
+
+list methods  list.
+	append
+	extend(list) appends all items in list paramater
+	sort
+	pop(i)  removes and returns item no param pops index 0
+	remove(element)
+
+not dot methods
+del list[i]
+sum list  (list contains one element, sum of all elements)
+
+
+
+is operater
+	check if two variables point to same object (boolean return (a is b))
+in operator(contains)
+	item in list  t/f
+
+
+	
