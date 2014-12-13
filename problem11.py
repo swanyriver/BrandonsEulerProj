@@ -33,10 +33,15 @@ def rowcheck(lgrid):
                 product*= f
             if product > largest:
                 largest = product
+            #print row[pos-4:pos]
+            print product
+        print "######################################"
+
     return largest
 
 
 #Rows
+rowproduct = 0
 rowproduct = rowcheck(grid) 
 if rowproduct > largest:
     largest = rowproduct
@@ -72,8 +77,31 @@ for x in range(1,gridsize-3):
         c+=1
     diagl.append(row)
 
-print diagl[len(diagl)/2:]
+rowproduct = rowcheck(diagl) 
+if rowproduct > largest:
+    largest = rowproduct
 
 
+#diag tr to br
+diagr = []
+for x in range(gridsize-3):
+    r=gridsize-1
+    row = []
+    for c in range(x,gridsize):
+        row.append(grid[r][c])
+        r-=1
+    diagr.append(row)
+
+for x in range(1,gridsize-3):
+    c=gridsize-1
+    row = []
+    for r in range(x,gridsize):
+        row.append(grid[r][c])
+        c-=1
+    diagr.append(row)
+
+rowproduct = rowcheck(diagr) 
+if rowproduct > largest:
+    largest = rowproduct
 
 print largest
