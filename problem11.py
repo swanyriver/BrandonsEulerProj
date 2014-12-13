@@ -21,8 +21,36 @@ grid.append([20,69,36,41,72,30,23,88,34,62,99,69,82,67,59,85,74,4,36,16])
 grid.append([20,73,35,29,78,31,90,1,74,31,49,71,48,86,81,16,23,57,5,54])
 grid.append([1,70,54,71,83,51,54,69,16,92,33,48,61,43,52,1,89,19,67,48])
 
-
 largest = 0
-print len(grid), 'x', len(grid[0])
+gridsize=len(grid)
+
+def rowcheck(lgrid):
+    largest = 0
+    for row in lgrid:
+        for pos in range(4,len(row)+1):
+            product = 1
+            for f in row[pos-4:pos]:
+                product*= f
+            if product > largest:
+                largest = product
+    return largest
+
 
 #Rows
+rowproduct = rowcheck(grid) 
+if rowproduct > largest:
+    largest = rowproduct
+
+gridcol = []
+for c in range(gridsize):
+    col = []
+    for r in range(gridsize):
+        col.append(grid[r][c])
+    gridcol.append(col)
+
+rowproduct = rowcheck(gridcol) 
+if rowproduct > largest:
+    largest = rowproduct
+
+
+print largest
