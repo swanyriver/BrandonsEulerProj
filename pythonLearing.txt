@@ -50,6 +50,9 @@ expr FOR var IN list,  returns a list where expr was evaluated on all items
 [x/2 for x in [4,5,6]]  :: [2,2.5,3.0]
 conditions  [x for x in nums if x%2==1]   filtering
 condition with expr  [x*x for x in nums if x>5]
+with else
+>>> [a if a else 2 for a in [0,1,0,3]]
+[2, 1, 2, 3]
 
 
 range(n)  returns a list of ints from 0 to n-1
@@ -72,6 +75,22 @@ is operater
 	check if two variables point to same object (boolean return (a is b))
 in operator(contains)
 	item in list  t/f
+
+
+list.sort() vs sorted(list)
+sorted(list) returns new list
+optional args  key=(1 arg function that returns value) makes a shadow list
+list of strings sorted by length
+	a = sorted(a,key=len)
+cpm = for 2 arg function,  reverse=True to sort backward
+
+print item,   trailing comma omits return line
+
+
+open(‘’) opens file returns file object
+for line in f:   iterates over string of one line at a time in file
+file.readlines()  returns a list of all lines in file
+file.read()   reads entire file into one string
 
 
 	
