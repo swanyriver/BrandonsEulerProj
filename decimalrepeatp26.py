@@ -6,7 +6,9 @@
 #print decs
 #for n in decs: print n
 
-LIMIT = 10000
+import math
+
+LIMIT = 2000
 
 def longdiv(x):
     answer = []
@@ -30,20 +32,26 @@ def recur(decl):
     return 0
 
 def repsearch(x):
+    print x
     answer = []
-    div = 10
+    div = 10**int(math.log10(x)+1)
     while len(answer)<=LIMIT:
         d = divmod(div,x)
-        answer.append(d[0])
+        answer.append(d[1])
         div = d[1] * 10
-        if not div: return 0  #terminating decimal
+        if not div: return (x,0,answer)  #terminating decimal
         recurance = recur(answer)
-        if recurance: return recurance
-    return 0
+        if recurance: return (x,recurance,answer)
+    return (x,0,answer)
 
 #for i in range(2,16): print repsearch(i)
 
-reps=[(i,repsearch(i)) for i in range(2,1000)]
+#reps=[(i,repsearch(i)) for i in range(2,1000)]
+reps =[repsearch(i) for i in range(2,1000)]
 reps=sorted(reps, reverse=True, key=lambda x:x[1])
-print reps[0]
-print reps[:20]
+for i in reps[:10]: print i[:2]
+#print reps[:20]
+#for r in reps: print r
+#print reps[982]
+#print reps[982][2][-reps[0][1]:]
+#print reps[0]
