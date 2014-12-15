@@ -93,4 +93,13 @@ file.readlines()  returns a list of all lines in file
 file.read()   reads entire file into one string
 
 
+usfull modules:
+	itertools
+	collections
+
+itertools.permutation(lst) returns list containing all perms
+itertools.combinations(lst) returns list of all combinations
+
+
+
 	
