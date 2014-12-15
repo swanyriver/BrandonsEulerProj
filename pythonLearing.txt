@@ -101,5 +101,7 @@ itertools.permutation(lst) returns list containing all perms
 itertools.combinations(lst) returns list of all combinations
 
 
+It does short circut && ||
+
 
 	
