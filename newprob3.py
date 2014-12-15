@@ -1,8 +1,8 @@
 import math
 
 BIGNUM = 600851475143
-largest_possibe_factor = BIGNUM/2
-largest = 0;
+largest_possibe_factor = BIGNUM / 2
+largest = 0
 
 
 def isPrime(x):
