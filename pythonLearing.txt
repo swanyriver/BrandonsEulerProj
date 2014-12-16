@@ -104,4 +104,10 @@ itertools.combinations(lst) returns list of all combinations
 It does short circut && ||
 
 
+*list  will unpack the list,  can be used to call a function from a list of args
+point = [x,y]
+def drawpoint(x,y)
+drawpoint(*point)
+
+
 	
