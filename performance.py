@@ -1,20 +1,33 @@
 import timeit
 
-def runone(func,args):
-    timein = timeit.time.time()
-    func(*args)
-    timetotal = timeit.time.time() - timein
-    print "%s ran in %f seconds with args:"%(func.func_name,timetotal), args
-
-def abtest(funcs, args, scale=False):
-    """runs funcs[] with unpacked args[] displaying name and time to execute
-       if scale then first item of arg is list of args to be iterated over"""
+def abtest(funcs, args, verbose=False):
+    """runs funcs[] with unpacked args[] displaying name and time to execute"""
+    results =[]
     for func in funcs:
-        if scale:
-            for s in args[0]:
-                if len(args)>1: runone(func,[s,args[1:]])
-                else: runone(func,[s])
-        else: runone(func,args)
+        timein = timeit.time.time()
+        func(*args)
+        timetotal = timeit.time.time() - timein
+        results.append((func.func_name,timetotal))
+        if verbose:
+            print "%s ran in %f seconds with args:"% \
+            (func.func_name,timetotal), args
+    return results
+
+def scaletest(func, args, verbose=False):
+    """runs func with each argument in args displaying name and time to execute"""
+    results =[]
+    for arg in args:
+        timein = timeit.time.time()
+
+        if type(arg) is list: func(*arg)
+        else: func(arg)
+
+        timetotal = timeit.time.time() - timein
+        results.append((arg,timetotal))
+        if verbose:
+            print "%s ran in %f seconds with args:"% \
+            (func.func_name,timetotal), arg
+    return results
 
 
 
