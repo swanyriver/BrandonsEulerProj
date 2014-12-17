@@ -2,6 +2,7 @@ import timeit
 
 def abtest(funcs, args, verbose=False):
     """runs funcs[] with unpacked args[] displaying name and time to execute"""
+    if type(args) is not list: args = [args]
     results =[]
     for func in funcs:
         timein = timeit.time.time()

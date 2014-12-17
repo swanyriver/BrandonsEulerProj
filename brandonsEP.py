@@ -1,4 +1,4 @@
-def sieve(MAX):
+def sievev1(MAX):
     MAX +=1
     primes = []
     candidates = [True] * MAX
@@ -8,6 +8,23 @@ def sieve(MAX):
             primes.append(i)
             for factor in range(i*i,MAX,i):candidates[factor]=False
     return primes
+
+def sievev2(MAX):
+    MAX +=1
+    primes = []
+    candidates = [True] * MAX
+
+    for i in xrange(4,MAX,2): candidates[i]=False
+    primes.append(2)
+
+    for i in xrange(3,MAX,2):
+        if candidates[i]:
+            primes.append(i)
+            for factor in range(i*i,MAX,i):candidates[factor]=False
+    return primes
+
+
+sieve = sievev2
 
 def allDivisors(n):
     from math import sqrt
