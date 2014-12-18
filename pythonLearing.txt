@@ -109,5 +109,29 @@ point = [x,y]
 def drawpoint(x,y)
 drawpoint(*point)
 
+all(lst), any(lst)   return T/F for &&,&&,&&   ||,||,||
+
+iterator next(iter) throws exception at end
+next(iter,default_value)  is an alternative
+
+you can add fields to an instance of a class
+
+conditions can be chained
+a < b < c   if B>=a && B<c
+
+global variables can be accesed in a function
+but to be modified there must be
+	global var_name
+preceding the assignment
+
+
+
+for is evaled as True if it completes
+else will execute after break
+for:, if:break,  else: (esle = if break)
+for x in range(i):
+	if a==b: break
+else: print "we broke"
+
 
 	
