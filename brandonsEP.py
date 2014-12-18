@@ -36,3 +36,14 @@ def allDivisors(n):
             divisors.append(div[0])
     if len(divisors)>1 and divisors[-1] == divisors[-2]: divisors.pop()
     return divisors
+
+def fact(x):
+    for i in range(x-1,0,-1): x*=i
+    return x
+
+def numCombs(n,r):
+    return int(fact(n)/(fact(r)*fact(n-r)))
+def numCombsWRep(n,r):
+    return int(fact(n+r-1)/(fact(r)*fact(n-1)))
+def numPerms(n,r):
+    return int(fact(n)/fact(n-r))
