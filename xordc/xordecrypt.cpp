@@ -52,24 +52,73 @@ void decrypt(char* in, char* out, char* key){
     *out=0;
 }
 
+void getKey(int i, char* key){
+    key[0]= i%26+'a';
+    key[1]= (i%(26*26))/26 +'a';
+    key[2]= i/(26*26)+'a';
+}
+
+int score(char* text, hashMap* dict){
+    int result = 0;
+    char* finger = text;
+    char* fileEnd = text+NUMCHARS;
+    while(finger<fileEnd){
+        char* wordEnd=finger;
+        while(*wordEnd!=' ' && wordEnd<fileEnd)++wordEnd;
+        *wordEnd=0;
+        if(isWord(dict,finger)) ++result;
+        finger = wordEnd+1;
+    }
+    return result;
+}
+
 int main() {
 
-    hashMap* myDict = createDict();
+    char* out = (char*) malloc(NUMCHARS+1);
 
-    char* test = (char*) malloc(PADDED);
-    for(char* i=test; i<test+PADDED; i+=16){
-        strcpy(i,"hello Brandon :)");
+    /*hashMap* myDict = createDict();
+
+
+
+    char key[4];
+    key[3]=0;
+    int BestWordMatch = 0;
+    char bestKey[3];
+
+    for(int i = 0; i<(26*26*26); ++i){
+
+        getKey(i,key);
+        //printf("%s  %d\n",key, key[1]);
+
+        decrypt(cipherText,out,key);
+
+        int wordMatch = score(out,myDict);
+        if (wordMatch>BestWordMatch){
+            BestWordMatch = wordMatch;
+            for(int i=0;i<3;++i) bestKey[i]=key[i];
+        }
+
     }
-    *(test+NUMCHARS)=0;
 
-    char* out = (char*) malloc(PADDED);
+    decrypt(cipherText,out,bestKey);
 
-    printf("%s\n",test);
-    decrypt(test,out,"abc");
-    printf("%s\n",out);
+    printf("result: (matched words:%d) \n\n%s\n\n",BestWordMatch,out);
+    printf("key was: %s",bestKey);
 
-    decrypt(out,out,"abc");
-    printf("%s\n",out);
+    printf("first:%c,%d", *out);
+*/
+    decrypt(cipherText,out,"god");
+    out[0] = out[0]^'g';  //for some reason first one is missed
+    printf("\n\n\n%s",out);
+
+    char* finger = out;
+    int sum = 0;
+    while(*finger){
+        sum+=*finger;
+        finger++;
+    }
+
+    printf("\n\nsum is%d\n\n",sum);
 
 
 	return 0;

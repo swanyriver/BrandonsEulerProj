@@ -51,6 +51,11 @@ hashMap *createMap(int tableSize) {
 
 //Helper function written by Brandon Swanson
 int _hashedIndex(int TSize, KeyType k){
+
+    int idx = stringHash2(k)%TSize;
+    if(idx<0) idx +=TSize;
+    return idx;
+
     if(HASHING_FUNCTION == 1)
         return (stringHash1(k) + TSize) % TSize;
     else
