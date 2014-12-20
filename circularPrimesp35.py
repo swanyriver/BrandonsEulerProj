@@ -1,6 +1,6 @@
 import brandonsEP
 
-primes = brandonsEP.sieve(10**6)
+primes = set(brandonsEP.sieve(10**6))
 
 def toNum(digits):
     result = 0
@@ -17,8 +17,7 @@ def rotations(num):
 
 numCircs =0
 for p in primes:
-    print p
-    if all([brandonsEP.contains(primes,x) for x in rotations(p)]): 
+    if all([x in primes for x in rotations(p)]): 
         numCircs+=1
         print p, "is TRUE"
 

@@ -58,6 +58,7 @@ def digits(x):
     return result
 
 def contains(sortedlist,num):
+
     if len(sortedlist) == 1:
         return num == sortedlist[0]
     else:
@@ -65,4 +66,4 @@ def contains(sortedlist,num):
         if num < sortedlist[mid]: 
             return contains(sortedlist[:mid], num)
         else:
-            return contains(sortedlist[mid:], num) 
+            return contains(sortedlist[mid:], num)
