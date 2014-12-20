@@ -58,7 +58,8 @@ def digits(x):
     return result
 
 def contains(sortedlist,num):
-
+    #This function is slower than python "in" wich i assumed was linear
+    #is it stack frame genearation, or the list slices
     if len(sortedlist) == 1:
         return num == sortedlist[0]
     else:

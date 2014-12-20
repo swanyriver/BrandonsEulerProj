@@ -1,6 +1,17 @@
 import brandonsEP
 
-primes = set(brandonsEP.sieve(10**6))
+primes = brandonsEP.sieve(10**6)
+
+#From Rosseta Code
+def binary_search(l, value):
+    low = 0
+    high = len(l)-1
+    while low <= high: 
+        mid = (low+high)//2
+        if l[mid] > value: high = mid-1
+        elif l[mid] < value: low = mid+1
+        else: return True
+    return False
 
 def toNum(digits):
     result = 0
@@ -17,9 +28,9 @@ def rotations(num):
 
 numCircs =0
 for p in primes:
-    if all([x in primes for x in rotations(p)]): 
+    if all([binary_search(primes,x) for x in rotations(p)]): 
         numCircs+=1
-        print p, "is TRUE"
+        #print p, "is TRUE"
 
 
 print numCircs
