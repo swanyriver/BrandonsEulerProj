@@ -38,6 +38,7 @@ def allDivisors(n):
     return divisors
 
 def fact(x):
+    if x==0: return 1
     for i in range(x-1,0,-1): x*=i
     return x
 
