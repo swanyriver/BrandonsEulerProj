@@ -19,6 +19,9 @@ primesofDigit[digits+1] = primes[beginIndex:]
 
 reducedPrimes = primes[:]
 
+for i in range(1,7):
+    print i, len(primesofDigit[i])
+
 
 def valid(num, digits): 
     rightTrunc = False
