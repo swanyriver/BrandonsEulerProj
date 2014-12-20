@@ -26,6 +26,21 @@ def sievev2(MAX):
 
 sieve = sievev2
 
+def isPrime(x):
+    from math import sqrt
+    if x == 1 or x == 0: return False
+    if x == 2 or x==3: return True
+    if not x&1: return False
+    if not x%3:
+        return False
+    r = int(sqrt(x))
+    f = 5
+    while f<=r:
+        if not x%f or not x%(f+2):
+            return False
+        f+=6
+    return True
+
 def allDivisors(n, inclusive = False):
     from math import sqrt
     divisors = [1]
