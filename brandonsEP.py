@@ -47,3 +47,22 @@ def numCombsWRep(n,r):
     return int(fact(n+r-1)/(fact(r)*fact(n-1)))
 def numPerms(n,r):
     return int(fact(n)/fact(n-r))
+
+def digits(x):
+    result = []
+    while x:
+        a = divmod(x,10)
+        result.append(a[1])
+        x = a[0]
+    result.reverse()
+    return result
+
+def contains(sortedlist,num):
+    if len(sortedlist) == 1:
+        return num == sortedlist[0]
+    else:
+        mid = len(sortedlist)//2
+        if num < sortedlist[mid]: 
+            return contains(sortedlist[:mid], num)
+        else:
+            return contains(sortedlist[mid:], num) 
