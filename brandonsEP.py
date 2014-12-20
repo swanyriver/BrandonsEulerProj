@@ -57,14 +57,25 @@ def digits(x):
     result.reverse()
     return result
 
-def contains(sortedlist,num):
+#def contains(sortedlist,num):
     #This function is slower than python "in" wich i assumed was linear
     #is it stack frame genearation, or the list slices
-    if len(sortedlist) == 1:
-        return num == sortedlist[0]
-    else:
-        mid = len(sortedlist)//2
-        if num < sortedlist[mid]: 
-            return contains(sortedlist[:mid], num)
-        else:
-            return contains(sortedlist[mid:], num)
+#    if len(sortedlist) == 1:
+#        return num == sortedlist[0]
+#    else:
+#        mid = len(sortedlist)//2
+#        if num < sortedlist[mid]: 
+#            return contains(sortedlist[:mid], num)
+#        else:
+#            return contains(sortedlist[mid:], num)
+
+#From Rosseta Code
+def binary_search(l, value):
+    low = 0
+    high = len(l)-1
+    while low <= high: 
+        mid = (low+high)//2
+        if l[mid] > value: high = mid-1
+        elif l[mid] < value: low = mid+1
+        else: return True
+    return False
