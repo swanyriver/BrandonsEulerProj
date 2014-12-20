@@ -49,13 +49,13 @@ def numCombsWRep(n,r):
 def numPerms(n,r):
     return int(fact(n)/fact(n-r))
 
-def digits(x):
+def digits(x, reverse = False):
     result = []
     while x:
         a = divmod(x,10)
         result.append(a[1])
         x = a[0]
-    result.reverse()
+    if not reverse: result.reverse()
     return result
 
 #def contains(sortedlist,num):
