@@ -19,10 +19,6 @@ primesofDigit[digits+1] = primes[beginIndex:]
 
 reducedPrimes = primes[:]
 
-for i in range(1,7):
-    print i, len(primesofDigit[i])
-
-
 def valid(num, digits): 
     rightTrunc = False
     leftTrunc = num%(10**digits) in primesofDigit[digits] 
@@ -33,7 +29,6 @@ def valid(num, digits):
 winers = []
 for x in range(1,6):
     reducedPrimes = [p for p in reducedPrimes if valid(p,x)]
-    print x, " remaining:", len(reducedPrimes)
     winers.extend([p for p in reducedPrimes if p in primesofDigit[x+1]])
 
 print winers

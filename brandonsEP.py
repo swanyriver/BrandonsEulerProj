@@ -26,7 +26,7 @@ def sievev2(MAX):
 
 sieve = sievev2
 
-def allDivisors(n):
+def allDivisors(n, inclusive = False):
     from math import sqrt
     divisors = [1]
     for factor in xrange(2,int(sqrt(n))+1):
@@ -35,6 +35,7 @@ def allDivisors(n):
             divisors.append(factor)
             divisors.append(div[0])
     if len(divisors)>1 and divisors[-1] == divisors[-2]: divisors.pop()
+    if inclusive: divisors.append(n)
     return divisors
 
 def fact(x):
@@ -56,6 +57,13 @@ def digits(x, reverse = False):
         result.append(a[1])
         x = a[0]
     if not reverse: result.reverse()
+    return result
+
+def lsToNum(digList):
+    result = 0
+    for digit in digList:
+        result *=10
+        result +=digit
     return result
 
 #def contains(sortedlist,num):
