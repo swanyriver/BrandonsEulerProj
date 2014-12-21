@@ -12,10 +12,7 @@ primes = brandonsEP.sieve(10**3)
 
 def testFormula(a,b):
     i = 0
-    while True:
-        num = i**2 + a*i + b
-        if num>0 and brandonsEP.isPrime(num): i+=1
-        else: break
+    while brandonsEP.isPrime(i**2 + a*i + b): i+=1
     return i
 
 print testFormula(1, 41)      #expected result:40

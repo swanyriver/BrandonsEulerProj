@@ -28,9 +28,9 @@ sieve = sievev2
 
 def isPrime(x):
     from math import sqrt
-    if x == 1 or x == 0: return False
-    if x == 2 or x==3: return True
     if not x&1: return False
+    if x < 2: return False
+    if x == 2 or x==3: return True
     if not x%3:
         return False
     r = int(sqrt(x))
