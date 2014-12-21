@@ -127,11 +127,44 @@ preceding the assignment
 
 
 for is evaled as True if it completes
-else will execute after break
+else will execute if for loop completed without break
 for:, if:break,  else: (esle = if break)
 for x in range(i):
 	if a==b: break
-else: print "we broke"
+else: print "we did not break"
 
+loop idioms
+
+backwards:
+    for item in reversed(list)
+with index
+    for i,item in enumerate(list)
+
+for ------
+    break
+else (no break)
+
+
+for k,v in dict.iteritems():
+
+namedtuple
+nt = namedtuple('name',['fieldname','fieldname'])
+
+tupple unpack
+b = (brandon,29,male)
+name, age, sex = b
+
+use tuple unpacking and packing to update states simultaneously
+fibinaci(n):
+    x,y = 0,1
+    for i in range(n):
+          print x
+          x,y = y, x+y
+
+# Generator expression     creates an iterable instead of a new object
+(x*2 for x in range(256))
+
+# List comprehension
+[x*2 for x in range(256)]
 
 	
