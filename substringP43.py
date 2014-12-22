@@ -40,9 +40,10 @@ def findPD(primesIndex,currentnum,numsremaining,result):
 
 def findB(primesIndex,currentnum,numsremaining,result):
     if primes[primesIndex] == 2:
-        result.append(numsremaining+currentnum)
-        numsremaining.reverse()
-        result.append(numsremaining+currentnum)
+        if not currentnum[1]&1:
+            result.append(numsremaining+currentnum)
+            numsremaining.reverse()
+            result.append(numsremaining+currentnum)
         return
 
     for n in numsremaining:
@@ -57,7 +58,7 @@ for x in xrange(17,1000,17):
     if len(dig)<3: dig.insert(0, 0)
     a,b,c = dig[0],dig[1],dig[2]
     if a != b != c !=a:
-        findPD(1, dig, [x for x in range(10) if x not in dig], pandigitals)
+        findB(1, dig, [x for x in range(10) if x not in dig], pandigitals)
 
 #print factcors[primes[1]]
 #test = (2,8)
@@ -68,7 +69,12 @@ print pandigitals
 print [1,4,0,6,3,5,7,2,8,9] in pandigitals
 print len(pandigitals)
 a= [lsToNum(x) for x in pandigitals]
-print sum(a)
+
+b = [1430952867 ,  1460357289 ,  1406357289 , 4130952867 , 4160357289 , 4106357289]
+
+print [x for x in a if x not in b]
+
+print "sum=",sum(a)
 #for p in primes: 
 #recursive function needed here
 
