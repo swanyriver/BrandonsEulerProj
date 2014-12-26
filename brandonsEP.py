@@ -28,9 +28,9 @@ sieve = sievev2
 
 def isPrime(x):
     from math import sqrt
+    if x == 2 or x==3: return True
     if not x&1: return False
     if x < 2: return False
-    if x == 2 or x==3: return True
     if not x%3:
         return False
     r = int(sqrt(x))
@@ -126,3 +126,27 @@ def pythagPrims(Numlevels):
 
 
     return trips
+
+
+def primeFactors(num):
+
+    orig = num
+
+    pFactors =[]
+    
+    #factors of 2
+    if not num&1: pFactors.append(2)
+
+    while not num&1:
+        num = num>>1
+
+    for i in range(3,orig):
+        div = divmod(num, i)
+        if not div[1]: pFactors.append(i)
+        while div[0] and not div[1]:
+            num = div[0]
+            div = divmod(num, i)
+        if not div[1]:
+            if brandonsEP.isPrime(num): pFactors.append(num)
+
+    return pFactors
