@@ -150,3 +150,13 @@ def primeFactors(num):
             if brandonsEP.isPrime(num): pFactors.append(num)
 
     return pFactors
+
+
+def concatNums(a,b):
+    from math import log10
+    #lenb = int(log10(b))+1
+    a*= 10**(int(log10(b))+1)
+    return a+b
+
+
+
