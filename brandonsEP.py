@@ -1,3 +1,5 @@
+import math
+
 def sievev1(MAX):
     MAX +=1
     primes = []
@@ -27,13 +29,12 @@ def sievev2(MAX):
 sieve = sievev2
 
 def isPrime(x):
-    from math import sqrt
     if x == 2 or x==3: return True
     if not x&1: return False
     if x < 2: return False
     if not x%3:
         return False
-    r = int(sqrt(x))
+    r = int(math.sqrt(x))
     f = 5
     while f<=r:
         if not x%f or not x%(f+2):
@@ -42,9 +43,8 @@ def isPrime(x):
     return True
 
 def allDivisors(n, inclusive = False):
-    from math import sqrt
     divisors = [1]
-    for factor in xrange(2,int(sqrt(n))+1):
+    for factor in xrange(2,int(math.sqrt(n))+1):
         div = divmod(n,factor)
         if not div[1]:
             divisors.append(factor)
@@ -158,5 +158,8 @@ def concatNums(a,b):
     a*= 10**(int(log10(b))+1)
     return a+b
 
+
+def lengthNum(x):
+    return int(math.log10(x))+1
 
 
