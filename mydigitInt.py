@@ -2,6 +2,8 @@ import math
 
 class digitInt(int):
     def __len__(self):
+        if self == 0: return 1
+        if not self: return False
         return int(math.log10(self))+1
 
     def __getitem__(self,key):
