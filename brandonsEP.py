@@ -163,3 +163,6 @@ def lengthNum(x):
     return int(math.log10(x))+1
 
 
+def polynumber(sides,n):
+    s = sides
+    return ((n**2)*(s-2) - n*(s-4))//2
