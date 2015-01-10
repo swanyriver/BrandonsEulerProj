@@ -2,7 +2,7 @@ import brandonsEP
 from math import factorial
 
 limit = 10**6
-length = 60
+length = 59
 count = 0
 
 facts = map(factorial, range(10))
