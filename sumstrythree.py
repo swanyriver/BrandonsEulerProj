@@ -11,6 +11,6 @@ def addto(n, min = 1, sofar = []):
         total += addto(n-part, min=part, sofar=sofar[:])
         sofar.pop()
 
-    return total
+    return total - 1
 
 print addto(6)
