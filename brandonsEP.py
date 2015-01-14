@@ -166,3 +166,7 @@ def lengthNum(x):
 def polynumber(sides,n):
     s = sides
     return ((n**2)*(s-2) - n*(s-4))//2
+
+
+def ceildiv(a, b):
+    return -(-a // b)
