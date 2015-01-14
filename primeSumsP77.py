@@ -1,4 +1,5 @@
 import brandonsEP
+import itertools
 
 p = brandonsEP.sieve(100)
 bsi = brandonsEP.binary_search_index
@@ -14,11 +15,7 @@ def addto(n, min = 1):
         total += addto(n-part, min=part)
     return total
 
-n = 10
-ways = 0
-
-while (ways<5000):
-    n+=1
-    ways = addto(n)
-
-print n, brandonsEP.isPrime(n), ways
+for n in itertools.count(start=11):
+    if addto(n)>5000:
+        print n
+        break
